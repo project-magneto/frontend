@@ -17,7 +17,7 @@ export interface SearchFilterInterface {
 const SearchFilter: React.FC<SearchFilterInterface> = ({ rows }) => {
 
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredData, setFilteredData] = useState([]);
+    const [filteredData, setFilteredData] = useState<any[]>([]);
 
     const handleSearchInputChange = (event: any) => {
         const query = event.target.value;
