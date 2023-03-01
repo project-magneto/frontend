@@ -23,7 +23,10 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
     }, [])
 
     return <>
-        <SearchFilter rows={rows} />
+        <div style={{'display':'flex', 'justifyContent': 'space-between'}}>
+            <Modal row={[]} />
+            <SearchFilter rows={rows} />
+        </div>
         <div className="table-wrapper">
             <table className="data-table">
                 <thead>

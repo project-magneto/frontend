@@ -31,7 +31,6 @@ const SearchFilter: React.FC<SearchFilterInterface> = ({ rows }) => {
     };
 
     return  <div className="actions">
-                <button id="add-new">Add New</button>
                 <input 
                     type="text"
                     value={searchQuery}
