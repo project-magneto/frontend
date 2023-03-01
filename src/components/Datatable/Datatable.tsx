@@ -41,7 +41,13 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
                                 <td>{row.last_name}</td>
                                 <td>{row.email}</td>
                                 <td>{row.address}</td>
-                                <td>{row.status}</td>
+                                <td>
+                                    <div className="toggle-button">
+                                        <input type="checkbox" id="toggle" className="toggle-checkbox" defaultChecked={row.status} disabled/>
+                                        <label htmlFor="toggle" className="toggle-label"></label>
+                                    </div>
+                                </td>
+                                
                                 <td>
                                     <Modal row={row} />
                                 </td>
