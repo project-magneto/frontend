@@ -1,3 +1,5 @@
+// https://www.mockaroo.com/
+
 export const User = [
     {"id":1,"first_name":"Casi","last_name":"Feldhuhn","email":"cfeldhuhn0@java.com","address":"15th Floor","status":true},
     {"id":2,"first_name":"Kevan","last_name":"Leggitt","email":"kleggitt1@statcounter.com","address":"Suite 83","status":false},

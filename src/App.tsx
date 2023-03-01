@@ -1,7 +1,15 @@
+import './App.css';
+import { Navbar } from './components';
+import { UserPage } from './pages';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <UserPage />
+      </div>
+    </>
   )
 }
 
