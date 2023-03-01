@@ -10,11 +10,11 @@ type User = {
     status?: boolean;
 };
 
-export interface DatatableInterface {
+export interface ModalInterface {
     row: User;
 }
 
-const Modal: React.FC<DatatableInterface> = ({ row }) => {
+const Modal: React.FC<ModalInterface> = ({ row }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [modalStyle, setModalStyle] = useState('none');

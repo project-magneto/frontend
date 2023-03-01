@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './styles/paginator.css'
 
-export interface DatatableInterface {
+export interface PaginatorInterface {
     totalRows: number;
     rowsPerPage: number;
 }
 
-const Paginator: React.FC<DatatableInterface> = ({ totalRows, rowsPerPage }) => {
+const Paginator: React.FC<PaginatorInterface> = ({ totalRows, rowsPerPage }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(totalRows / rowsPerPage);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Modal } from '../';
-import { Paginator } from '../';
+import { Modal, SearchFilter, Paginator } from '../';
 import './styles/datatable.css'
 
 type User = {
@@ -24,10 +23,7 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
     }, [])
 
     return <>
-        <div className="actions">
-            <button id="add-new">Add New</button>
-            <input type="text" id="search" placeholder="Search..."/>
-        </div>
+        <SearchFilter rows={rows} />
         <div className="table-wrapper">
             <table className="data-table">
                 <thead>
