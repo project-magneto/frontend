@@ -19,13 +19,13 @@ const Modal: React.FC<DatatableInterface> = ({ row }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalStyle, setModalStyle] = useState('none');
 
-    function toggleModal() {
+    const toggleModal = () => {
         setIsOpen(!isOpen);
         isOpen ? setModalStyle('none') : setModalStyle('block');        
     }
 
     return <div>
-                <button onClick={toggleModal}>Open Modal</button>
+                <button onClick={toggleModal}>Details</button>
                 {isOpen && (
                     <div className="modal" style={{'display':modalStyle}}>
                         <div className="modal-content">

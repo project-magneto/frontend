@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Modal } from '../';
+import { Paginator } from '../';
 import './styles/datatable.css'
 
 type User = {
@@ -53,13 +54,7 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
                     }
                 </tbody>
             </table>
-            <div className="pagination">
-            <a href="#" className="prev">Prev</a>
-            <a href="#" className="page active">1</a>
-            <a href="#" className="page">2</a>
-            <a href="#" className="page">3</a>
-            <a href="#" className="next">Next</a>
-            </div>
+            <Paginator totalRows={rows.length} rowsPerPage={10} />
         </div>
     </>
 };
