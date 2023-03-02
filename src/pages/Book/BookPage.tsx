@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 
 import { Datatable } from '@/components';
 import { useCrudStore } from '@/hooks/useCrudStore';
-import './styles/user.css'
+import './styles/book.css'
 
 export interface UserInterface {}
 
-const UserPage: React.FC<UserInterface> = () => {
+const BookPage: React.FC<UserInterface> = () => {
 
     const { rows, loadingData, startLoadingRows } = useCrudStore();
 
     useEffect(() => {
-        startLoadingRows('/api/users');
+        startLoadingRows('/api/books');
     }, [])
     
     return (
@@ -21,7 +21,7 @@ const UserPage: React.FC<UserInterface> = () => {
                 ? <h1>loading...</h1>
                 : (
                     <>
-                        <h1>Users</h1>
+                        <h1>Books</h1>
                         <Datatable rows={rows} />
                     </>
                 )
@@ -30,4 +30,4 @@ const UserPage: React.FC<UserInterface> = () => {
     )
 };
 
-export default UserPage;
+export default BookPage;
