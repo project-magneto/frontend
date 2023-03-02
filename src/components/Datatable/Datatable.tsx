@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Modal, SearchFilter, Paginator } from '../';
 import './styles/datatable.css'
-
-type User = {
-    id?: number;
-    first_name?: string;
-    last_name?: string;
-    email?: string;
-    address?: string;
-    status?: boolean;
-};
 export interface DatatableInterface {
-    rows: Array<User>;
+    rows: Array<Object>;
 }
 
 const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
@@ -19,7 +10,9 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
     const [ labels, setLabels ] = useState(Array<string>);
 
     useEffect(() => {
-        setLabels(Object.keys(rows[0]));
+        const labels = Object.keys(rows[0]);
+        labels.pop();
+        setLabels(labels);
     }, [])
 
     return <>
@@ -32,6 +25,7 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
                 <thead>
                     <tr>
                         {labels.map((label, i) => <th key={i}>{ label }</th>)}
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -39,11 +33,15 @@ const Datatable: React.FC<DatatableInterface> = ({ rows }) => {
                     {
                         rows.map((row, i) => (
                             <tr key={i}>
-                                <td>{row.id}</td>
-                                <td>{row.first_name}</td>
-                                <td>{row.last_name}</td>
-                                <td>{row.email}</td>
-                                <td>{row.address}</td>
+                                {
+                                    labels.map((label) => {
+                                        return (
+                                                <>
+                                                    <td>{row[label]}</td>
+                                                </>
+                                        )
+                                    })
+                                }
                                 <td>
                                     <div className="toggle-button">
                                         <input type="checkbox" id="toggle" className="toggle-checkbox" defaultChecked={row.status} disabled/>
